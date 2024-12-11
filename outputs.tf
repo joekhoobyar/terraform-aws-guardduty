@@ -43,10 +43,6 @@ output "guardduty_s3_bucket" {
   value       = module.s3_bucket
 }
 
-output "guardduty_replica_bucket" {
-  description = "Amazon S3 Replica Bucket created for AWS GuardDuty."
-  value       = module.replica_bucket
-}
 output "guardduty_log_bucket" {
   description = "Amazon S3 Log Bucket created for AWS GuardDuty."
   value       = module.log_bucket
@@ -58,9 +54,4 @@ output "guardduty_log_bucket" {
 output "guardduty_kms_key" {
   description = "Amazon KMS Key created to encrypt AWS GuardDuty's S3 Bucket."
   value       = aws_kms_key.guardduty_key
-}
-
-output "guardduty_kms_replica_key" {
-  description = "Amazon KMS Key created to encrypt AWS GuardDuty's S3 Replica Bucket."
-  value       = aws_kms_key.replica_key
 }
